@@ -4,7 +4,7 @@
 [ext_resource path="res://MobC.gd" type="Script" id=2]
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=3]
 
-[node name="Mob" index="0" instance=ExtResource( 1 )]
+[node name="Mob" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 Bullet = ExtResource( 3 )
@@ -12,7 +12,7 @@ Bullet = ExtResource( 3 )
 [node name="FireTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 
