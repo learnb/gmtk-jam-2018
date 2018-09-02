@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shmup_track.wav-7379d9e18637c2fd08f73bcb5f885e19.sample"
+
+[deps]
+
+source_file="res://sounds/shmup_track.wav"
+dest_files=[ "res://.import/shmup_track.wav-7379d9e18637c2fd08f73bcb5f885e19.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

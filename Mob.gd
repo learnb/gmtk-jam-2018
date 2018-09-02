@@ -7,7 +7,7 @@ var velocity = Vector2()
 
 func _ready():
 	velocity = Vector2(1,1).normalized()
-	add_to_group("mobs")
+	#add_to_group("mobs")
 
 func _process(delta):
 	position += (velocity*speed) * delta
@@ -20,6 +20,9 @@ func _on_Mob_body_entered(body):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+func play_spawn_sfx():
+	$SpawnSFX.play()
 
 #func die():
 #	hide()

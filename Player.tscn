@@ -41,6 +41,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 push_strength = 0
+speed = null
 
 [node name="Body" type="AnimatedSprite" parent="." index="0"]
 

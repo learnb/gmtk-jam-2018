@@ -3,6 +3,7 @@ extends Area2D
 signal hit
 
 export (int) var push_strength
+export (int) var speed
 var screensize
 
 

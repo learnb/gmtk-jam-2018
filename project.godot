@@ -10,8 +10,9 @@ config_version=3
 
 [application]
 
-config/name="schmup-without-movement"
+config/name="Shoot'n'Push"
 run/main_scene="res://Arena.tscn"
+run/disable_stdout=true
 config/icon="res://icon.png"
 
 [display]

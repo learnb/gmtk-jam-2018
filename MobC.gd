@@ -3,12 +3,15 @@ extends "Mob.gd"
 
 export (PackedScene) var Bullet
 
+var dead
 var gun_length = 30
 
 func _ready():
 	speed = 20
+	dead = false
+	add_to_group("mobs")
 	$FireTimer.start()
-	pass
+	play_spawn_sfx()
 
 func _process(delta):
 	pass
@@ -24,7 +27,9 @@ func _on_FireTimer_timeout():
 	b.linear_velocity = target_vec * b.speed
 
 func die():
-	get_parent().stats_C[1] += 1
-	hide()
-	$CollisionShape2D.disabled = true
-	queue_free()
+	if not dead:
+		dead = true
+		get_parent().stats_C[1] += 1
+		hide()
+		$CollisionShape2D.disabled = true
+		queue_free()
