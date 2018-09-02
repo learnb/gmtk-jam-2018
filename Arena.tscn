@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Arena.gd" type="Script" id=1]
+[ext_resource path="res://Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MobA.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MobB.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MobC.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+
+[node name="ArenaB" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+Bullet = ExtResource( 2 )
+MobA = ExtResource( 3 )
+MobB = ExtResource( 4 )
+MobC = ExtResource( 5 )
+
+[node name="MobSpawnTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[node name="PowerUpSpawnTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="StartTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="FireTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.25
+one_shot = false
+autostart = false
+
+[node name="Player" parent="." index="4" instance=ExtResource( 6 )]
+
+push_strength = 240
+
+[connection signal="timeout" from="MobSpawnTimer" to="." method="_on_MobSpawnTimer_timeout"]
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]
+
+[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]
+
+[connection signal="body_entered" from="Player" to="." method="_on_Player_body_entered"]
+
+
